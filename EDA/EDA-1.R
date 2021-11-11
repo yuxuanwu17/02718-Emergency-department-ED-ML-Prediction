@@ -62,4 +62,7 @@ table(features[which(features$Variable.Name %in% remained_feature),4])
 #Binary Categorical     Numeric 
 #491          13          79
 
-
+## data imbalance
+## the data is actually imbalanced, there are much more negative samples
+## than positive samples
+table(clean_dat$disposition)
