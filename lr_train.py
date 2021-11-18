@@ -17,8 +17,8 @@ def logstic_regression(dir):
 
     y_train = training_data['disposition']
     y_test = testing_data['disposition']
-    X_train = training_data.drop("disposition", axis=1)
-    X_test = testing_data.drop("disposition", axis=1)
+    X_train = StandardScaler().fit_transform(training_data.drop("disposition", axis=1))
+    X_test = StandardScaler().fit_transform(testing_data.drop("disposition", axis=1))
 
     y_train = np.array(y_train)
     y_test = np.array(y_test)
@@ -40,5 +40,5 @@ def logstic_regression(dir):
 if __name__ == '__main__':
     df = "data/featureSelectedAllDataWithY.csv"
     logstic_regression(df)
-    df = "data/Cleaned_dat_encoded.csv"
-    logstic_regression(df)
+    # df = "data/Cleaned_dat_encoded.csv"
+    # logstic_regression(df)
