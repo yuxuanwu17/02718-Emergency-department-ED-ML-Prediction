@@ -29,8 +29,14 @@ diposition_corr_order <- diposition_corr[order(diposition_corr$corabs,
 
 cor_test <- cor(df_trans[,which(colnames(df_trans) %in% 
                                   rownames(diposition_corr_order)[1:30])])
-ggcorrplot(cor_test, hc.order = TRUE, outline.col = "white")
-
+colnames(cor_test) <- 1:ncol(cor_test)
+rownames(cor_test) <- 1:nrow(cor_test)
+ggcorrplot(cor_test, hc.order = TRUE, outline.col = "white",
+           ggtheme = theme_classic)
+pdf("./Plots/Correlation.pdf")
+ggcorrplot(cor_test, hc.order = TRUE, outline.col = "white",
+           ggtheme = theme_classic)
+dev.off()
 
 ########### sex pie chart ##############################
 sexPie <- function(sexArray, titleText){
@@ -62,6 +68,20 @@ sexPie <- function(sexArray, titleText){
     ggtitle(titleText)
   p
 }
+## export pdf plot
+pdf("./Plots/Gender_all.pdf")
+sexPie(clean_dat$gender,"Gender distribution for all patients")
+dev.off()
+
+pdf("./Plots/Gender_admit.pdf")
+sexPie(clean_dat$gender[which(clean_dat$disposition == "Admit")],
+       "Gender distribution for admitted patients")
+dev.off()
+
+pdf("./Plots/Gender_discharge.pdf")
+sexPie(clean_dat$gender[which(clean_dat$disposition == "Discharge")],
+       "Gender distribution for discharged patients")
+dev.off()
 
 
 
@@ -91,13 +111,28 @@ esiPie <- function(esiArray, titleText){
       plot.title=element_text(size=14, face="bold", hjust = 0.5)
     )
   
-  p <- pie + scale_fill_brewer("ESI") + blank_theme +
+  p <- pie + scale_fill_brewer("ESI",palette = "OrRd",direction=-1) + blank_theme +
     theme(axis.text.x=element_blank())+
     geom_text_repel(aes(y = value/2 + c(0, cumsum(value)[-length(value)]), 
                   label = percent(value/sum(value))), size=5) + 
     ggtitle(titleText)
   p
 }
+
+pdf("./Plots/ESI_all.pdf")
+esiPie(clean_dat$esi,"ESI distribution for all patients")
+dev.off()
+
+pdf("./Plots/ESI_admit.pdf")
+esiPie(clean_dat$esi[which(clean_dat$disposition == "Admit")],
+       "ESI distribution for admitted patients")
+dev.off()
+
+pdf("./Plots/ESI_discharge.pdf")
+esiPie(clean_dat$esi[which(clean_dat$disposition == "Discharge")],
+       "ESI distribution for discharged patients")
+dev.off()
+
 
 ########### age stack barplot ##############################
 ## inspect on age
@@ -133,3 +168,7 @@ for (i in 1:nrow(age_df)){
 ggplot(age_df[,c(1,2,5)], aes(fill=label, y=value, x=age)) + 
   geom_bar(position="fill", stat="identity")
 
+pdf("./Plots/Age_stackplot.pdf")
+ggplot(age_df[,c(1,2,5)], aes(fill=label, y=value, x=age)) + 
+  geom_bar(position="fill", stat="identity")
+dev.off()
