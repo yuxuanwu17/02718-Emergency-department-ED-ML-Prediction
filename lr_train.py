@@ -5,8 +5,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-
-import time
+from sklearn.preprocessing import StandardScaler
 
 
 def logstic_regression(dir):
@@ -25,7 +24,7 @@ def logstic_regression(dir):
     X_train = np.array(X_train)
     X_test = np.array(X_test)
 
-    clf = LogisticRegression(random_state=0).fit(X_train, y_train)
+    clf = LogisticRegression(random_state=0, class_weight="balanced").fit(X_train, y_train)
 
     y_pred = clf.predict(X_test)
 
