@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+author: yuxuan
+date: 10/19/21
+output: html_notebook
+---
+
+## Load the data
+```{r}
+load("./data/5v_sparseMatrix_onlytriage.RData")
+```
+
+## Check the columns and rows
+```{r}
+library(Matrix)
+print(dim(dataset$x))
+```
+```{r}
+X <- as.matrix(dataset$x)
+Y <- dataset$y
+rm(dataset)
+```
+
+```{r}
+allOnlyTriage <- data.frame(X)
+allOnlyTriage$Y <- Y
+```
+
+## Find the NA
+
+```{r}
+cleanData <- na.omit(allOnlyTriage)
+```
+
+```{r}
+write.csv(allOnlyTriage, file = "./data/cleanOnlyTriage.csv")
+```
