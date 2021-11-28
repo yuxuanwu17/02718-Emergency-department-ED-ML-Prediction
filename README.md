@@ -14,8 +14,10 @@ The Electronic Health Record (EHR) data we use was from a paper published on [PL
 
 
 ## Workflow
-<img src="https://github.com/yuxuanwu17/proj4CM/blob/WX/Workflow.png" height="400" width="400" alt = "workflow"/>
 
+<p align="center">
+    <img src="https://github.com/yuxuanwu17/proj4CM/blob/WX/Workflow.png" height="400" width="500" alt = "workflow"/>
+</p>
 
 ## Authors
 * Xin Wang, xinwang3@andrew.cmu.edu, Carnegie Mellon University
