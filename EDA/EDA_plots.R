@@ -171,4 +171,5 @@ ggplot(age_df[,c(1,2,5)], aes(fill=label, y=value, x=age)) +
 pdf("./Plots/Age_stackplot.pdf")
 ggplot(age_df[,c(1,2,5)], aes(fill=label, y=value, x=age)) + 
   geom_bar(position="fill", stat="identity")
-dev.off()
+dev.off()memory.limit(20000)
+

@@ -34,7 +34,7 @@ finalDat <- removeNARow(clean_dat)
 
 
 ## remove feature that are all the same between samples
-## only one featture: “ecodesmachinery”
+## only one feature: “ecodesmachinery”
 sameFeature <- c()
 for (i in 1:ncol(finalDat)){
   if (length(table(finalDat[,i])) == 1) {
@@ -66,3 +66,4 @@ table(features[which(features$Variable.Name %in% remained_feature),4])
 ## the data is actually imbalanced, there are much more negative samples
 ## than positive samples
 table(clean_dat$disposition)
+
