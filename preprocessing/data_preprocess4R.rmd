@@ -7,7 +7,7 @@ output: html_notebook
 
 ## Load the data
 ```{r}
-load("../data/5v_sparseMatrix_onlytriage.RData")
+load("./data/5v_sparseMatrix_onlytriage.RData")
 ```
 
 ## Check the columns and rows
@@ -26,10 +26,12 @@ allOnlyTriage <- data.frame(X)
 allOnlyTriage$Y <- Y
 ```
 
+## Find the NA
+
 ```{r}
-dim(allOnlyTriage)
+cleanData <- na.omit(allOnlyTriage)
 ```
 
 ```{r}
-write.csv(allOnlyTriage,file= "../data/allOnlyTriage.csv")
+write.csv(allOnlyTriage, file = "./data/cleanOnlyTriage.csv")
 ```
