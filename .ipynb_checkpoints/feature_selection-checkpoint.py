@@ -1,4 +1,4 @@
-import pandas as pd
+timport pandas as pd
 import numpy as np
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.model_selection import train_test_split
