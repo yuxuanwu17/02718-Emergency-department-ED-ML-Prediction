@@ -2,13 +2,13 @@
 
 
 ## Background
-Emergency department (ED) visit is one of the most common ways to get medical support and EDs represents the largest source of hospital admissions. In order to improve the running efficiency of ED, optimize the resource allocation, as well as to maximize the number of patients that get appropriate treatment, we train machine learning models to predict hospital admission at the time of ED triage using patients' triage information and previous medical history.
+Emergency department (ED) visit is one of the most common ways to get medical support and ED represents the largest source of hospital admissions. In order to improve the running efficiency of ED, optimize the resource allocation, as well as to maximize the number of patients that get appropriate treatment, we train machine learning models to predict hospital admission at the time of ED triage using patients' triage information and previous medical history.
 
 **Note**: This is the course project for 02-718 Computational Medicine in fall 2021
 
 
 ## Data souorce
-The Electronic Health Record (EHR) data we use was from a paper published on [PLOS one](https://doi.org/10.1371/journal.pone.0201016). The original retrospective data was obtained from three Emergence Departments from March 2013 to July 2017, each ensuring one year of historical timeframe. We obtained the raw data from this [Keggle dataset](https://www.kaggle.com/maalona/hospital-triage-and-patient-history-data). 
+The Electronic Health Record (EHR) data we use was from a paper published on [PLOS one](https://doi.org/10.1371/journal.pone.0201016). The original retrospective data was obtained from three Emergence Departments from March 2013 to July 2017, each ensuring one year of historical timeframe. We obtained the raw data from this [Kaggle dataset](https://www.kaggle.com/maalona/hospital-triage-and-patient-history-data). 
 
 **Note**: Because data is large (> 500M), which includes 560,486 patient visits with 972 variables, we didn't upload it under this repo. But we can send it to you if your are interested.
 
