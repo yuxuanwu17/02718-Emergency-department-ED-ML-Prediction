@@ -7,14 +7,14 @@ library(openxlsx)
 load("../../Data/5v_cleandf.rdata")
 
 ## inspect data by checking NA ratio of each column
-## remove features that more than 5% samples have a NA in this field
+## remove features that more than or equal to 5% samples have a NA in this field
 removeNAColumn <- function(data, threshold = 0.05) {
   NA_ratio <- c()
   for (i in 1:ncol(data)) {
     curr_NA_ratio <- sum(is.na(data[, i]))/nrow(data)
     NA_ratio <- c(NA_ratio, curr_NA_ratio)
   }
-  cleaned_dat <- data[, which(NA_ratio <= threshold)]
+  cleaned_dat <- data[, which(NA_ratio < threshold)]
 }
 
 clean_dat <- removeNAColumn(df) # 584 feature + 1 label remaining
