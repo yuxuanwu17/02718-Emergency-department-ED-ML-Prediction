@@ -22,7 +22,7 @@ The Electronic Health Record (EHR) data we use was from a paper published on [PL
 ## File organization
 
 * `EDA` folder: includes scripts for EDA and some plots
-* `Data` folder: includes `Feature_dexcription.xlsx` file which has descriptions for each feature, and `Data_after_feature_selection.csv`, which is the full data after feature selection.
+* `Data` folder: includes `Feature_dexcription.xlsx` file which has descriptions for each feature, and `featureSelectedAllDataWithY.csv`, which is the full data after feature selection.
 * `comparison_plot` folder: includes performance comparsion between four models
 * `model` folder: includes feature selection .py script, scripts for training four models and code for drawing comparsion plots
 * `PlusOnePaper&Proposal` folder: includes the original [PLOS one](https://doi.org/10.1371/journal.pone.0201016) paper and our project proposal
